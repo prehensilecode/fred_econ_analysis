@@ -130,3 +130,7 @@ dmypy.json
 
 # API key file
 fred_key.txt
+
+# plots
+*.png
+*.svg
