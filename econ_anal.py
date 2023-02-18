@@ -58,6 +58,6 @@ unemp_states.dropna(inplace=True)
 id_to_state = unemp_df['title'].str.replace('Unemployment Rate in ', '').to_dict()
 unemp_states.columns = [id_to_state[c] for c in unemp_states.columns]
 
-px.line(unemp_states)
-plt.savefig('unemp_states.png')
+fig = px.line(unemp_states)
+fig.write_image('unemp_states.png')
 
