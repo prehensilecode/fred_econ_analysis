@@ -18,4 +18,10 @@ def read_api_key(filename):
 
 fred_key = read_api_key('fred_key.txt')
 
-print(fred_key)
+# Fred object
+fred = Fred(api_key=fred_key)
+
+# Search econ. data
+sp_search = fred.search('S&P', order_by='popularity')
+
+sp_search.head()
