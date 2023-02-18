@@ -7,6 +7,8 @@ import time
 
 from fredapi import Fred
 
+debug_p = False
+
 plt.style.use('fivethirtyeight')
 #pd.set_option('max_columns', 500)
 #color_pal = plt.rcParams["axes.prop_cycle"].by_key()["color"]
@@ -46,10 +48,15 @@ for myid in unemp_df.index:
 
 unemp_results = pd.concat(all_results, axis=1)
 
+# drop columns whose names are > 4
 cols_to_drop = []
 for i in unemp_results:
+    if debug_p:
+        print(i)
+
     if len(i) > 4:
         cols_to_drop.append(i)
+
 unemp_results = unemp_results.drop(columns=cols_to_drop, axis=1)
 
 unemp_states = unemp_results.copy()
