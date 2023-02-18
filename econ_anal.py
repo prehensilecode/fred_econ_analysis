@@ -61,3 +61,13 @@ unemp_states.columns = [id_to_state[c] for c in unemp_states.columns]
 fig = px.line(unemp_states)
 fig.write_image('unemp_states.png')
 
+# pull Apr 2020 unemployment rate by state
+ax = unemp_states.loc[unemp_states.index == '2020-05-01'].T \
+    .sort_values('2020-05-01') \
+    .plot(kind='barh', figsize=(8, 12), width=0.8,  edgecolor='black',
+          title='Unemployment Rate by State, May 2020')
+ax.legend().remove()
+ax.set_xlabel('% Unemployed')
+plt.savefig('unemployment_2020-05.png', bbox_inches='tight')
+
+
