@@ -1,5 +1,5 @@
 # fred_econ_analysis
-Analysis of FRED economic data (from Rob Mulla (robikscube@Kaggle))
+Analysis of [FRED](https://fred.stlouisfed.org) economic data (from Rob Mulla (robikscube@Kaggle))
 
 Original video: https://www.youtube.com/watch?v=R67XuYc9NQ4
 
